@@ -1,9 +1,10 @@
 import "./App.css";
+import { LotteryDrawPage } from "./pages";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <LotteryDrawPage />
     </div>
   );
 }

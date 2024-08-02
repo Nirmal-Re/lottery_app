@@ -1,5 +1,5 @@
 //lodaing and parsing JSON data
-//Maybe find a way to load this data from a file
+//Maybe find a way to load this data from a file.
 export const lotteryData = JSON.parse(`{
     "draws": [
     {
