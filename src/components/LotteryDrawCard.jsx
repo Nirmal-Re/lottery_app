@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/LotteryDrawCard.css";
 
 const LotteryDrawCard = (lottery_draw_data) => {
   const {
@@ -14,9 +15,12 @@ const LotteryDrawCard = (lottery_draw_data) => {
     topPrize,
   } = lottery_draw_data;
   return (
-    <div data-testid={id} className="LotteryDrawCard">
-      <h2>Lottery Draw Card</h2>
-      <p>Draw Date: {drawDate}</p>
+    <div data-testid={id} className="lotteryDrawCard">
+      <div className="card-header">
+        <span>Lottery Draw</span>
+        <span>{drawDate}</span>
+      </div>
+      <div className="line"></div>
       <p>Number 1: {number1}</p>
       <p>Number 2: {number2}</p>
       <p>Number 3: {number3}</p>

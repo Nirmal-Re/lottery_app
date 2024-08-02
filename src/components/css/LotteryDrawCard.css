@@ -1,0 +1,19 @@
+.lotteryDrawCard {
+  background-color: #dbcec2;
+  width: 300px;
+  padding: 10px;
+}
+
+.lotteryDrawCard .card-header {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lotteryDrawCard .line {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #000;
+}
