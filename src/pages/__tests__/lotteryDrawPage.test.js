@@ -1,5 +1,6 @@
 import { render, screen, cleanup } from "@testing-library/react";
-import { LotteryDrawPage } from "../../pages";
+import { BrowserRouter as Router } from "react-router-dom";
+import { LotteryDrawPage } from "..";
 import { lotteryData } from "../../constants/constant";
 
 afterEach(() => {
@@ -7,13 +8,21 @@ afterEach(() => {
 });
 
 test("should render LotteryDrawPage component", () => {
-  render(<LotteryDrawPage />);
+  render(
+    <Router>
+      <LotteryDrawPage />
+    </Router>
+  );
   const lotteryDrawPageElement = screen.getByTestId("lottery-draw-page");
   expect(lotteryDrawPageElement).toBeInTheDocument();
 });
 
 test("should render LotteryDrawPage with all data", () => {
-  render(<LotteryDrawPage />);
+  render(
+    <Router>
+      <LotteryDrawPage />
+    </Router>
+  );
   const { draws } = lotteryData;
   const totalDraws = draws.length;
   for (let index = 0; index < totalDraws; index++) {
