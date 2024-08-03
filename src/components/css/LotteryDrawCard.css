@@ -106,3 +106,7 @@
   text-transform: uppercase;
   cursor: pointer;
 }
+
+.view-your-tickets-button:hover {
+  background-color: #3079bd;
+}

@@ -7,30 +7,34 @@ import "./css/lotteryTicketPage.css";
 const LotteryTicketPage = () => {
   const [lotteryTicketData, setLotteryTicketData] = useState([]);
   const location = useLocation();
-  const message = location.state || {};
+  const drawData = location.state || {};
 
-  //Funcation to generate random 7 unique whole numbers between 0 and n
-  const sevenUniqueRandBetweenZeroAndN = (n) => {
+  const randNumber = (n) => {
+    return Math.floor(Math.random() * n + 1);
+  };
+
+  //Funcation to generate random 6 unique whole numbers between 0 and n
+  const sixUniqueRandBetweenZeroAndN = (n) => {
     const set = new Set();
-    while (set.size < 7) {
-      set.add(Math.floor(Math.random() * n + 1));
+    while (set.size <= 6) {
+      set.add(randNumber(n));
     }
     return [...set].sort((a, b) => a - b);
   };
 
   const createTicketData = () => {
-    const numbers = sevenUniqueRandBetweenZeroAndN(50);
+    const numbers = sixUniqueRandBetweenZeroAndN(60);
     return {
       id: 1,
-      drawDate: `For ${message.drawDate}`,
-      number1: numbers[0],
-      number2: numbers[1],
-      number3: numbers[2],
-      number4: numbers[3],
-      number5: numbers[4],
-      number6: numbers[5],
-      "bonus-ball": numbers[6],
-      topPrize: 1000000,
+      drawDate: `For ${drawData.drawDate}`,
+      picked_number1: numbers[0],
+      picked_number2: numbers[1],
+      picked_number3: numbers[2],
+      picked_number4: numbers[3],
+      picked_number5: numbers[4],
+      picked_number6: numbers[5],
+      "picked_bonus-ball": randNumber(50),
+      topPrize: randNumber(100000000),
     };
   };
 
@@ -52,17 +56,26 @@ const LotteryTicketPage = () => {
     <div>
       <div className="lottery-draw">
         <h1>Drawn Lottery</h1>
-        <LotteryDrawCard {...message} />
+        <LotteryDrawCard {...drawData} />
       </div>
       <div className="lottery-tickets">
         <h2>Your Lottery Tickets</h2>
         <div className="all-lottery-tickets">
-          {lotteryTicketData.map((lotterDrawData, index) => {
-            return <LotteryTicketCard key={index} {...lotterDrawData} />;
+          {lotteryTicketData.map((lotteryTicketData, index) => {
+            return (
+              <LotteryTicketCard
+                key={index}
+                {...lotteryTicketData}
+                drawData={drawData}
+              />
+            );
           })}
         </div>
       </div>
-      <button onClick={handleClick}> Generate Tickets </button>
+      <button className={`gen-ticket-button`} onClick={handleClick}>
+        {" "}
+        Generate Ticket{" "}
+      </button>
     </div>
   );
 };

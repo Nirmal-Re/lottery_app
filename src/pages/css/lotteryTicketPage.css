@@ -12,6 +12,10 @@
   text-transform: uppercase;
 }
 
+.lottery-tickets {
+  margin-bottom: 20px;
+}
+
 .lottery-tickets h2 {
   font-family: "Inria Sans", sans-serif;
   font-weight: 700;
@@ -25,4 +29,20 @@
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+.gen-ticket-button {
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  background-color: #53aae9;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.gen-ticket-button:hover {
+  background-color: #3079bd;
 }

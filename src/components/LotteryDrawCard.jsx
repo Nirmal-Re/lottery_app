@@ -44,7 +44,7 @@ const LotteryDrawCard = (lotteryDrawData) => {
         </div>
         <div className="top-prize info-box">
           <span className="text">Top Prize</span>
-          <span className="text">{topPrize}</span>
+          <span className="text">{`£${topPrize.toLocaleString()}`}</span>
         </div>
         {handleRedirect && (
           <div

@@ -1,0 +1,27 @@
+.lottery-ticket-card {
+  background-color: #cdc0b5;
+  width: 330px;
+  padding: 10px;
+}
+
+.lottery-ticket-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lottery-ticket-card .line {
+  margin-top: 5px;
+  margin-bottom: 3px;
+  border: 1px solid #000;
+}
+
+.correct {
+  background-color: #00ff00 !important;
+}
+
+.incorrect {
+  background-color: #ff0000 !important;
+}
