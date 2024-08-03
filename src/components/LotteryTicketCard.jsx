@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/LotteryDrawCard.css";
+import "./css/DrawAndTicket.css";
 import "./css/LotteryTicketCard.css";
 
 const LotteryTicketCard = (lotteryTicketData) => {
@@ -12,7 +12,6 @@ const LotteryTicketCard = (lotteryTicketData) => {
     picked_number4,
     picked_number5,
     picked_number6,
-    topPrize,
     drawData,
   } = lotteryTicketData;
 
@@ -70,7 +69,7 @@ const LotteryTicketCard = (lotteryTicketData) => {
     return (totalPot * prizePercentage).toLocaleString();
   }
   return (
-    <div data-testid={id} className="lottery-ticket-card">
+    <div data-testid={id} className="lottery-card">
       <div className="card-header">
         <span>Lottery Ticket</span>
         <span>{drawDate}</span>
@@ -80,7 +79,7 @@ const LotteryTicketCard = (lotteryTicketData) => {
         <div className="city">London</div>
         <div className="lottery-name">Bonus Ball</div>
       </div>
-      <div className="winning-numbers">
+      <div className="all-numbers">
         <div className="text">Your Numbers</div>
         <div className="numbers">
           <span

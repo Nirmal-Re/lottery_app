@@ -54,7 +54,7 @@ const LotteryTicketPage = () => {
 
   return (
     <div>
-      <div className="lottery-draw">
+      <div className="lottery-ticket-page">
         <h1>Drawn Lottery</h1>
         <LotteryDrawCard {...drawData} />
       </div>
@@ -73,8 +73,7 @@ const LotteryTicketPage = () => {
         </div>
       </div>
       <button className={`gen-ticket-button`} onClick={handleClick}>
-        {" "}
-        Generate Ticket{" "}
+        Generate Ticket
       </button>
     </div>
   );

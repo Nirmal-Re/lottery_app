@@ -5,3 +5,12 @@
   flex-wrap: wrap;
   gap: 20px;
 }
+
+.intro {
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 30px;
+  padding: 20px;
+}

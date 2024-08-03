@@ -1,11 +1,11 @@
-.lottery-draw {
+.lottery-ticket-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.lottery-draw h1 {
+.lottery-ticket-page h1 {
   font-family: "Inria Sans", sans-serif;
   font-weight: 700;
   font-style: normal;

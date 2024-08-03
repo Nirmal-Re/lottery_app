@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/DrawAndTicket.css";
 import "./css/LotteryDrawCard.css";
 
 const LotteryDrawCard = (lotteryDrawData) => {
@@ -15,7 +16,7 @@ const LotteryDrawCard = (lotteryDrawData) => {
     handleRedirect,
   } = lotteryDrawData;
   return (
-    <div data-testid={id} className="lotteryDrawCard">
+    <div data-testid={id} className="lottery-card">
       <div className="card-header">
         <span>Lottery Draw</span>
         <span>{drawDate}</span>
@@ -25,7 +26,7 @@ const LotteryDrawCard = (lotteryDrawData) => {
         <div className="city">London</div>
         <div className="lottery-name">Bonus Ball</div>
       </div>
-      <div className="winning-numbers">
+      <div className="all-numbers">
         <div className="text">Winning Numbers</div>
         <div className="numbers">
           <span className="regular-ball">{number1}</span>
