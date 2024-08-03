@@ -1,7 +1,7 @@
 import React from "react";
 import "./css/LotteryDrawCard.css";
 
-const LotteryDrawCard = (lotteryDrawData) => {
+const LotteryTicketCard = (lotteryDrawData) => {
   const {
     id,
     drawDate,
@@ -12,12 +12,11 @@ const LotteryDrawCard = (lotteryDrawData) => {
     number5,
     number6,
     topPrize,
-    handleRedirect,
   } = lotteryDrawData;
   return (
     <div data-testid={id} className="lotteryDrawCard">
       <div className="card-header">
-        <span>Lottery Draw</span>
+        <span>Lottery Ticket</span>
         <span>{drawDate}</span>
       </div>
       <div className="line"></div>
@@ -26,7 +25,7 @@ const LotteryDrawCard = (lotteryDrawData) => {
         <div className="lottery-name">Bonus Ball</div>
       </div>
       <div className="winning-numbers">
-        <div className="text">Winning Numbers</div>
+        <div className="text">Your Numbers</div>
         <div className="numbers">
           <span className="regular-ball">{number1}</span>
           <span className="regular-ball">{number2}</span>
@@ -46,17 +45,9 @@ const LotteryDrawCard = (lotteryDrawData) => {
           <span className="text">Top Prize</span>
           <span className="text">{topPrize}</span>
         </div>
-        {handleRedirect && (
-          <div
-            className="view-your-tickets-button ticket-box"
-            onClick={() => handleRedirect({ ...lotteryDrawData })}
-          >
-            <span className="text">View Your Tickets</span>
-          </div>
-        )}
       </div>
     </div>
   );
 };
 
-export default LotteryDrawCard;
+export default LotteryTicketCard;

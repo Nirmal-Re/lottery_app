@@ -1,10 +1,22 @@
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+
 import "./App.css";
-import { LotteryDrawPage } from "./pages";
+import { LotteryDrawPage, LotteryTicketPage } from "./pages";
 
 function App() {
   return (
     <div className="App">
-      <LotteryDrawPage />
+      <Router>
+        <Routes>
+          <Route path="/" element={<LotteryDrawPage />} />
+          <Route path="/lottery-ticket" element={<LotteryTicketPage />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
