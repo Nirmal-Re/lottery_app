@@ -11,7 +11,6 @@ const LotteryDrawCard = (lottery_draw_data) => {
     number4,
     number5,
     number6,
-    bonusBall,
     topPrize,
   } = lottery_draw_data;
   return (
@@ -21,14 +20,35 @@ const LotteryDrawCard = (lottery_draw_data) => {
         <span>{drawDate}</span>
       </div>
       <div className="line"></div>
-      <p>Number 1: {number1}</p>
-      <p>Number 2: {number2}</p>
-      <p>Number 3: {number3}</p>
-      <p>Number 4: {number4}</p>
-      <p>Number 5: {number5}</p>
-      <p>Number 6: {number6}</p>
-      <p>Bonus Ball: {bonusBall}</p>
-      <p>Top Prize: {topPrize}</p>
+      <div className="company-name">
+        <div className="city">London</div>
+        <div className="lottery-name">Bonus Ball</div>
+      </div>
+      <div className="winning-numbers">
+        <div className="text">Winning Numbers</div>
+        <div className="numbers">
+          <span className="regular-ball">{number1}</span>
+          <span className="regular-ball">{number2}</span>
+          <span className="regular-ball">{number3}</span>
+          <span className="regular-ball">{number4}</span>
+          <span className="regular-ball">{number5}</span>
+          <span className="regular-ball">{number6}</span>
+          <span className="bonus-ball">{lottery_draw_data["bonus-ball"]}</span>
+        </div>
+      </div>
+      <div className="more-info">
+        <div className="jackpot-winners info-box">
+          <span className="text">Jackpot Winners</span>
+          <span className="text">0</span>
+        </div>
+        <div className="top-prize info-box">
+          <span className="text">Top Prize</span>
+          <span className="text">{topPrize}</span>
+        </div>
+        <div className="view-your-tickets-button ticket-box">
+          <span className="text">View Your Tickets</span>
+        </div>
+      </div>
     </div>
   );
 };
