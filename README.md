@@ -9,7 +9,7 @@ This project contains a simulation of what a lottery app would look like. The ap
 npm run test
 ```
 
-## If you have node downloaded, you can run the application in development environment
+## If you have node downloaded, you can run the application in development environment using the following commands --
 1. Install Dependencies
  ```bash
  npm install
