@@ -38,6 +38,10 @@ test("should contain correct data in LotteryDrawCard component and not have VIEW
     draws[index].topPrize.toLocaleString()
   );
   expect(lotteryDrawCardElement).toHaveTextContent(draws[index]["bonus-ball"]);
+
+  expect(lotteryDrawCardElement).not.toContainHTML(
+    `<div data-testid="view-your-tickets-button-${draws[index].id}" class="view-your-tickets-button ticket-box"><span class="text">View Your Tickets</span></div>`
+  );
 });
 
 test("should contain correct data in LotteryDrawCard component and have VIEW YOUR TICKETS link", () => {
