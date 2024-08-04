@@ -1,5 +1,6 @@
 import React from "react";
-import "./css/DrawAndTicket.css";
+import ErrorCard from "./ErrorCard";
+import "./css/AllComponents.css";
 import "./css/LotteryTicketCard.css";
 
 const LotteryTicketCard = (lotteryTicketData) => {
@@ -15,8 +16,37 @@ const LotteryTicketCard = (lotteryTicketData) => {
     drawData,
   } = lotteryTicketData;
 
+  //Defensive programming: if any important data is missing, error card will be displayed
+  if (
+    !lotteryTicketData ||
+    !id ||
+    !drawDate ||
+    !picked_number1 ||
+    !picked_number2 ||
+    !picked_number3 ||
+    !picked_number4 ||
+    !picked_number5 ||
+    !picked_number6 ||
+    !lotteryTicketData["picked_bonus-ball"] ||
+    !drawData
+  ) {
+    return <ErrorCard error="Missing data" />;
+  }
+
   //Draw numbers
   const { number1, number2, number3, number4, number5, number6 } = drawData;
+  if (
+    !number1 ||
+    !number2 ||
+    !number3 ||
+    !number4 ||
+    !number5 ||
+    !number6 ||
+    !drawData["bonus-ball"]
+  ) {
+    return <ErrorCard error="Missing data" />;
+  }
+
   const orginalNumbers = new Set([
     Number(number1),
     Number(number2),
@@ -25,6 +55,8 @@ const LotteryTicketCard = (lotteryTicketData) => {
     Number(number5),
     Number(number6),
   ]);
+
+  //picked numbers
   const pickedNumbers = new Set([
     picked_number1,
     picked_number2,
@@ -34,9 +66,9 @@ const LotteryTicketCard = (lotteryTicketData) => {
     picked_number6,
   ]);
 
-  let totalMatch = new Set(
-    [...pickedNumbers].filter((x) => orginalNumbers.has(x))
-  ).size;
+  let totalMatch = [...pickedNumbers].filter((x) =>
+    orginalNumbers.has(x)
+  ).length;
   totalMatch =
     drawData["bonus-ball"] === lotteryTicketData["picked_bonus-ball"]
       ? totalMatch + 1

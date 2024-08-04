@@ -1,6 +1,8 @@
 import React from "react";
-import "./css/DrawAndTicket.css";
+
+import "./css/AllComponents.css";
 import "./css/LotteryDrawCard.css";
+import ErrorCard from "./ErrorCard";
 
 const LotteryDrawCard = (lotteryDrawData) => {
   const {
@@ -15,6 +17,24 @@ const LotteryDrawCard = (lotteryDrawData) => {
     topPrize,
     handleRedirect,
   } = lotteryDrawData;
+
+  //Defensive programming: if any important data is missing, error card will be displayed
+  if (
+    !lotteryDrawData ||
+    !id ||
+    !drawDate ||
+    !number1 ||
+    !number2 ||
+    !number3 ||
+    !number4 ||
+    !number5 ||
+    !number6 ||
+    !topPrize ||
+    !lotteryDrawData["bonus-ball"]
+  ) {
+    return <ErrorCard error="Missing data" />;
+  }
+
   return (
     <div data-testid={id} className="lottery-card">
       <div className="card-header">
