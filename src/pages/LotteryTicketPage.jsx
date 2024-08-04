@@ -12,7 +12,7 @@ const LotteryTicketPage = () => {
 
   //Generate a ticket on page load
   useEffect(() => {
-    const data = createTicketData();
+    const data = createTicketData(drawData.drawDate);
     setLotteryTicketData([data]);
   }, []);
 

@@ -60,6 +60,8 @@ test("should contain correct data in LotteryDrawCard component and have VIEW YOU
   expect(lotteryDrawCardElement).toHaveTextContent(draws[index].number4);
   expect(lotteryDrawCardElement).toHaveTextContent(draws[index].number5);
   expect(lotteryDrawCardElement).toHaveTextContent(draws[index].number6);
+  expect(lotteryDrawCardElement).toHaveTextContent("Winning Numbers");
+  expect(lotteryDrawCardElement).not.toHaveTextContent("Your Numbers");
   expect(lotteryDrawCardElement).toHaveTextContent(
     draws[index].topPrize.toLocaleString()
   );
