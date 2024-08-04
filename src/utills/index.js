@@ -11,10 +11,10 @@ const sixUniqueRandBetweenZeroAndN = (n) => {
   return [...set].sort((a, b) => a - b);
 };
 
-export const createTicketData = (drawDate) => {
+export const createTicketData = (drawDate, value) => {
   const numbers = sixUniqueRandBetweenZeroAndN(60);
   return {
-    id: randNumber(100000000),
+    id: value || randNumber(100000000),
     drawDate: `For ${drawDate}`,
     picked_number1: numbers[0],
     picked_number2: numbers[1],

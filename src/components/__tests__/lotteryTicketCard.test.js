@@ -11,9 +11,11 @@ afterEach(() => {
 test("should render LotteryTicketCard component", () => {
   const { draws } = lotteryData;
   const index = 0;
-  const lotteryTicketData = createTicketData(draws[index].drawDate);
+  const lotteryTicketData = createTicketData(draws[index].drawDate, "0");
   render(<LotteryTicketCard {...lotteryTicketData} drawData={draws[index]} />);
-  const lotteryDrawCardElement = screen.getByTestId(`${lotteryTicketData.id}`);
+  const lotteryDrawCardElement = screen.getByTestId(
+    `lottery-ticket-${lotteryTicketData.id}`
+  );
   expect(lotteryDrawCardElement).toBeInTheDocument();
 });
 
@@ -26,10 +28,10 @@ test("should render ErrorCard component when data is missing", () => {
 test("should contain correct data in LotteryTicketCard component", () => {
   const { draws } = lotteryData;
   const index = 0;
-  const lotteryTicketData = createTicketData(draws[index].drawDate);
+  const lotteryTicketData = createTicketData(draws[index].drawDate, "0");
   render(<LotteryTicketCard {...lotteryTicketData} drawData={draws[index]} />);
   const lotteryTicketCardElement = screen.getByTestId(
-    `${lotteryTicketData.id}`
+    `lottery-ticket-${lotteryTicketData.id}`
   );
   expect(lotteryTicketCardElement).toHaveTextContent(
     lotteryTicketData.drawDate

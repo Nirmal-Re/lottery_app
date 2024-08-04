@@ -101,7 +101,7 @@ const LotteryTicketCard = (lotteryTicketData) => {
     return (totalPot * prizePercentage).toLocaleString();
   }
   return (
-    <div data-testid={id} className="lottery-card">
+    <div data-testid={`lottery-ticket-${id}`} className="lottery-card">
       <div className="card-header">
         <span>Lottery Ticket</span>
         <span>{drawDate}</span>

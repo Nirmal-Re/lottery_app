@@ -69,6 +69,7 @@ const LotteryDrawCard = (lotteryDrawData) => {
         </div>
         {handleRedirect && (
           <div
+            data-testid={`view-your-tickets-button-${id}`}
             className="view-your-tickets-button ticket-box"
             onClick={() => handleRedirect({ ...lotteryDrawData })}
           >

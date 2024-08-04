@@ -68,6 +68,6 @@ test("should contain correct data in LotteryDrawCard component and have VIEW YOU
   expect(lotteryDrawCardElement).toHaveTextContent(draws[index]["bonus-ball"]);
   expect(lotteryDrawCardElement).toHaveTextContent("View Your Tickets");
   expect(lotteryDrawCardElement).toContainHTML(
-    `<div class="view-your-tickets-button ticket-box"><span class="text">View Your Tickets</span></div>`
+    `<div data-testid="view-your-tickets-button-${draws[index].id}" class="view-your-tickets-button ticket-box"><span class="text">View Your Tickets</span></div>`
   );
 });
