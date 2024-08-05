@@ -78,25 +78,25 @@ const LotteryTicketCard = (lotteryTicketData) => {
     let prizePercentage;
     switch (totalMatches) {
       case 7:
-        prizePercentage = 1; // 70% of the pot for all 7 matches
+        prizePercentage = 1;
         break;
       case 6:
-        prizePercentage = 0.6; // 50% of the pot for all 6 matches
+        prizePercentage = 0.6;
         break;
       case 5:
-        prizePercentage = 0.5; // 20% of the pot for 5 matches
+        prizePercentage = 0.5;
         break;
       case 4:
-        prizePercentage = 0.4; // 10% of the pot for 4 matches
+        prizePercentage = 0.4;
         break;
       case 3:
-        prizePercentage = 0.02; // 5% of the pot for 3 matches
+        prizePercentage = 0.02;
         break;
       case 2:
-        prizePercentage = 0.01; // 1% of the pot for 2 matches
+        prizePercentage = 0.01;
         break;
       default:
-        prizePercentage = 0; // No prize for less than 2 matches
+        prizePercentage = 0;
     }
     return (totalPot * prizePercentage).toLocaleString();
   }
